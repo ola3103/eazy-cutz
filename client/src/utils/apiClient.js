@@ -4,7 +4,9 @@ import notification from "./notification";
 export const registerUser = async (formData) => {
   try {
     const response = await axios.post(
-      `https://eazy-cutz.vercel.app/api/v1/auth/sign-up`,
+      `${
+        import.meta.env.VITE_API_PROD_URL || import.meta.env.VITE_API_BASE_URL
+      }/api/v1/auth/sign-up`,
       formData
     );
   } catch (error) {
@@ -15,11 +17,11 @@ export const registerUser = async (formData) => {
 export const handleSignIn = async (formData) => {
   try {
     const response = await axios.post(
-      `https://eazy-cutz.vercel.app/api/v1/auth/sign-in`,
+      `${
+        import.meta.env.VITE_API_PROD_URL || import.meta.env.VITE_API_BASE_URL
+      }/api/v1/auth/sign-in`,
       formData,
-      {
-        withCredentials: true,
-      }
+      { withCredentials: true }
     );
     notification({ message: "Sign in successfully", status: "success" });
     return response;
