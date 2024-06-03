@@ -9,12 +9,12 @@ const app = express();
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
 
-const globalErrorController = require("./controllers/globalErrorController");
-const bookingController = require("./controllers/bookingController");
-const authRouter = require("./routes/authRoute");
-const serviceRouter = require("./routes/serviceRoute");
-const bookingRouter = require("./routes/bookingRoute");
-const CustomError = require("./errors/customError");
+const globalErrorController = require("../controllers/globalErrorController");
+const bookingController = require("../controllers/bookingController");
+const authRouter = require("../routes/authRoute");
+const serviceRouter = require("../routes/serviceRoute");
+const bookingRouter = require("../routes/bookingRoute");
+const CustomError = require("../errors/customError");
 
 app.post(
   "/webhook-checkout",
@@ -36,10 +36,10 @@ app.use(
 
 app.options("*", cors());
 
-app.use(express.static(path.join(__dirname, "../client/dist")));
+app.use(express.static(path.join(__dirname, "../../client/dist")));
 
 app.get(/^\/(?!api).*/, (req, res) => {
-  res.sendFile(path.resolve(__dirname, "../client/dist", "index.html"));
+  res.sendFile(path.resolve(__dirname, "../../client/dist", "index.html"));
 });
 
 app.use("/api/v1/auth", authRouter);
