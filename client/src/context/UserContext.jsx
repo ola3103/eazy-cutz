@@ -13,9 +13,7 @@ const UserProvider = ({ children }) => {
   const getServiceData = async () => {
     try {
       const response = await axios.get(
-        `${
-          import.meta.env.VITE_API_PROD_URL || import.meta.env.VITE_API_BASE_URL
-        }/api/v1/service`
+        `${import.meta.env.VITE_API_PROD_URL}/api/v1/service`
       );
       setServiceData(response.data.data);
     } catch (error) {
@@ -29,9 +27,7 @@ const UserProvider = ({ children }) => {
   const handleUserAndAuth = async () => {
     try {
       const response = await axios.get(
-        `${
-          import.meta.env.VITE_API_PROD_URL || import.meta.env.VITE_API_BASE_URL
-        }/api/v1/auth/me`,
+        `${import.meta.env.VITE_API_PROD_URL}/api/v1/auth/me`,
         {
           withCredentials: true,
         }
