@@ -3,10 +3,7 @@ import notification from "./notification";
 
 export const registerUser = async (formData) => {
   try {
-    const response = await axios.post(
-      `${"" || import.meta.env.VITE_API_BASE_URL}/api/v1/auth/sign-up`,
-      formData
-    );
+    const response = await axios.post(`/api/v1/auth/sign-up`, formData);
   } catch (error) {
     notification({ message: error.response.data.message, status: "error" });
   }
@@ -14,11 +11,9 @@ export const registerUser = async (formData) => {
 
 export const handleSignIn = async (formData) => {
   try {
-    const response = await axios.post(
-      `${"" || import.meta.env.VITE_API_BASE_URL}/api/v1/auth/sign-in`,
-      formData,
-      { withCredentials: true }
-    );
+    const response = await axios.post(`/api/v1/auth/sign-in`, formData, {
+      withCredentials: true,
+    });
     notification({ message: "Sign in successfully", status: "success" });
     return response;
   } catch (error) {
