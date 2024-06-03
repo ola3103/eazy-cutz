@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon index.js",
-    "start": "node ./dist/index.js",
-    "build": "parcel build index.js"
+    "start": "node dist/index.js",
+    "dev": "parcel src/index.js --out-dir dist --target node",
+    "build": "parcel build src/index.js --out-dir dist --target node"
   },
   "author": "",
   "license": "ISC",
