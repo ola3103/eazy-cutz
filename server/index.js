@@ -28,7 +28,7 @@ app.use(
   cors({
     origin:
       process.env.NODE_ENV === "production"
-        ? `https://eazy-cut.vercel.app`
+        ? `https://eazy-cutz.vercel.app`
         : `http://localhost:5173`,
     credentials: true,
   })
