@@ -12,7 +12,10 @@ const Bookings = () => {
     const fetchBookings = async () => {
       try {
         const response = await axios.get(
-          `${"" || import.meta.env.VITE_API_BASE_URL}/api/v1/booking`,
+          `${
+            import.meta.env.VITE_API_PROD_URL ||
+            import.meta.env.VITE_API_BASE_URL
+          }/api/v1/booking`,
           { withCredentials: true }
         );
         setBookings(response.data.data);

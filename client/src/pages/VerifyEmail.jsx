@@ -22,7 +22,9 @@ const VerifyEmail = () => {
   const handleVerifyEmail = async () => {
     try {
       const response = await axios.post(
-        `${"" || import.meta.env.VITE_API_BASE_URL}/api/v1/auth/verify-user`,
+        `${
+          import.meta.env.VITE_API_PROD_URL || import.meta.env.VITE_API_BASE_URL
+        }/api/v1/auth/verify-user`,
         dataObj,
         { withCredentials: true }
       );
