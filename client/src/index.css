@@ -796,6 +796,7 @@ USER HOMEPAGE
   display: flex;
   margin-top: 1.75rem;
 }
+
 /* ------------------------------
 USER HOMEPAGE BOOKING FORM
 ------------------------------- */
@@ -1100,7 +1101,7 @@ USER HOMEPAGE RESPONSIVENESS
 }
 @media (max-width: 576px) {
   .user_homepage_container {
-    flex-wrap: wrap;
+    flex-wrap: wrap-reverse;
   }
   .booking_form {
     width: 100%;
